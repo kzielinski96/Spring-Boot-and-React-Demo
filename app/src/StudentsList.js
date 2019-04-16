@@ -46,7 +46,7 @@ class StudentsList extends Component {
                         <td>{student.mail}</td>
                         <ButtonGroup>
                             <Button size="sm" color="primary" tag={Link} to={"/students/" + student.id}>Edit</Button>
-                            <Button size="sm" color="danger" onClick={() => this.remove(student.d)}>Delete</Button>
+                            <Button size="sm" color="danger" onClick={() => this.remove(student.id)}>Delete</Button>
                         </ButtonGroup>
                     </tr>
         });
