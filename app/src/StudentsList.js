@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Button, ButtonGroup, Container, Table } from 'reactstrap';
 import AppNavbar from './AppNavbar';
 import { Link } from 'react-router-dom';
+import { FaEdit, FaTrashAlt, FaPlus } from 'react-icons/fa'
+
 
 class StudentsList extends Component {
 
@@ -40,13 +42,17 @@ class StudentsList extends Component {
         }
 
         const studentsList = students.map(student => {
-            return  <tr key={student.id}>
+            return  <tr className="dark" key={student.id}>
                         <td style={{whiteSpace: 'nowrap'}}>{student.name}</td>
                         <td>{student.album}</td>
                         <td>{student.mail}</td>
                         <ButtonGroup>
-                            <Button size="sm" color="primary" tag={Link} to={"/students/" + student.id}>Edit</Button>
-                            <Button size="sm" color="danger" onClick={() => this.remove(student.id)}>Delete</Button>
+                            <Button size="sm" color="primary" tag={Link} to={"/students/" + student.id}>
+                                <FaEdit /> Edit
+                            </Button>
+                            <Button size="sm" color="danger" onClick={() => this.remove(student.id)}>
+                                <FaTrashAlt/> Delete
+                            </Button>
                         </ButtonGroup>
                     </tr>
         });
@@ -56,7 +62,9 @@ class StudentsList extends Component {
                 <AppNavbar/>
                 <Container fluid>
                     <div className="float-right">
-                        <Button color="success" tag={Link} to="/students/new">Add Student</Button>
+                        <Button color="success" tag={Link} to="/students/new">
+                            <FaPlus /> Add Student
+                        </Button>
                     </div>
                     <h3>Students List</h3>
                     <Table className="mt-4">

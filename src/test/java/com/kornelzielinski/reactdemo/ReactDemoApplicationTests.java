@@ -61,6 +61,14 @@ public class ReactDemoApplicationTests {
 	}
 
 	@Test
+	public void updateTeacher() {
+		Teacher teacher = teacherRepository.findById(1l).get();
+		teacher.setName("Teacher1");
+		teacher.setMail("teacher1@test.com");
+		teacherRepository.save(teacher);
+	}
+
+	@Test
 	public void deleteStudent() {
 		Student student = studentRepository.findById(2l).get();
 		studentRepository.delete(student);

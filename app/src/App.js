@@ -6,7 +6,8 @@ import StudentsList from './StudentsList';
 import StudentEdit from './StudentEdit';
 
 class App extends Component {
-  render() {
+
+    render() {
     return (
         <Router>
           <Switch>
